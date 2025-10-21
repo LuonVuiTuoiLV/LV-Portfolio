@@ -51,7 +51,7 @@ export default async function RootLayout({
 					horizontal="center"
 				>
 					<div className="absolute h-[100%] w-full">
-						<LightRays count={8} blur={30} speed={22} intensity={0.5} />
+						<LightRays count={12} blur={30} speed={8} intensity={0.8} />
 					</div>
 					<Flex fillWidth minHeight="16" s={{ hide: true }} />
 					<Header />
