@@ -30,9 +30,7 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({
 		try {
 			emailjs.init('t-Zwtm-FnPm6N6n_I');
 			setEmailjsReady(true);
-		} catch (err) {
-			console.error('EmailJS init error:', err);
-		}
+		} catch (err) {}
 	}, []);
 
 	if (newsletter.display === false) return null;
@@ -87,7 +85,6 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({
 		} catch (err: any) {
 			const errorMsg = err?.text || err?.message || 'Unknown error';
 			setError(`Failed: ${errorMsg}`);
-			console.error('EmailJS error:', err);
 		} finally {
 			setLoading(false);
 		}

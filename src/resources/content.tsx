@@ -163,26 +163,21 @@ const about: About = {
 		title: 'Technical skills',
 		skills: [
 			{
-				title: 'Figma',
-				description: (
-					<>Able to prototype in Figma with Once UI with unnatural speed.</>
-				),
+				title: 'Next.js + Once UI',
+				description: <>Building Portfolio with Next.js + Once UI.</>,
 				tags: [
 					{
-						name: 'Figma',
-						icon: 'figma',
+						name: 'Next.js',
+						icon: 'nextjs',
+					},
+					{
+						name: 'Tailwind',
+						icon: 'tailwind',
 					},
 				],
-				// optional: leave the array empty if you don't want to display images
 				images: [
 					{
-						src: '/images/projects/project-01/cover-02.jpg',
-						alt: 'Project image',
-						width: 16,
-						height: 9,
-					},
-					{
-						src: '/images/projects/project-01/cover-03.jpg',
+						src: '/images/projects/project-01/cover2.png',
 						alt: 'Project image',
 						width: 16,
 						height: 9,
@@ -190,9 +185,9 @@ const about: About = {
 				],
 			},
 			{
-				title: 'Next.js',
+				title: 'Next.js + Mongoose',
 				description: (
-					<>Building next gen apps with Next.js + Tailwind UI + Mongoose.</>
+					<>Building Ucademy app with Next.js + Tailwind UI + Mongoose.</>
 				),
 				tags: [
 					{
@@ -214,7 +209,7 @@ const about: About = {
 				],
 				images: [
 					{
-						src: '/images/projects/project-01/cover-04.jpg',
+						src: '/images/projects/project-01/cover1.png',
 						alt: 'Project image',
 						width: 16,
 						height: 9,
