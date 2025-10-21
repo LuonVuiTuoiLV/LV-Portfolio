@@ -1,8 +1,8 @@
 ---
-title: "Set up Mailchimp and collect emails"
-summary: "Set up the Mailchimp newsletter block for your Magic Portfolio."
-publishedAt: "2025-04-16"
-tag: "Magic Portfolio"
+title: 'Set up Mailchimp and collect emails'
+summary: 'Set up the Mailchimp newsletter block for your Magic Portfolio.'
+publishedAt: '2025-04-16'
+tag: 'Magic Portfolio'
 ---
 
 ## Mailchimp account
@@ -14,55 +14,54 @@ Sign up for a [Mailchimp account](https://mailchimp.com) and create a new list i
 Create a new [embed form](https://mailchimp.com/help/add-a-signup-form-to-your-website/) and copy the form URL to your Magic Portfolio config.
 
 <CodeBlock
-    highlight="2"
-    codes={[
-  {
-    code:
-`const mailchimp = {
+	highlight="2"
+	codes={[
+		{
+			code: `const mailchimp = {
     action: 'https://url/subscribe/post?parameters',
     effects: {
       ...
     }
-};`, 
-    language: "tsx",
-    label: "src/app/resources/config.js"
-  }
-]} />
+};`,
+			language: 'tsx',
+			label: 'src/app/resources/config.js',
+		},
+	]}
+/>
 
 ## Newsletter content
 
 You can modify the headline and description in the `content.js` file.
 
 <CodeBlock
-    highlight="2"
-    codes={[
-  {
-    code:
-`const newsletter = {
+	highlight="2"
+	codes={[
+		{
+			code: `const newsletter = {
     display: true,
-    title: <>Subscribe to {person.firstName}'s Newsletter</>,
+    title: <>Subscribe to {person.lastName}'s Newsletter</>,
     description: (
       <>
         I occasionally write about design, technology, and share thoughts on the intersection of creativity and engineering.
       </>
     ),
-};`, 
-    language: "tsx",
-    label: "src/app/resources/content.js"
-  }
-]} />
+};`,
+			language: 'tsx',
+			label: 'src/app/resources/content.js',
+		},
+	]}
+/>
 
 ## Background effect
 
 There's a pre-configured background in `Mailchimp.tsx` that you can modify in the `mailchimp` object. Set graphic elements such as gradient, dots, lines, and grid and configure their appearance for the newsletter block.
 
 <CodeBlock
-    codeHeight={24}
-    marginBottom="16"
-    codes={[
-  {
-    code:
-`const mailchimp = {
+	codeHeight={24}
+	marginBottom="16"
+	codes={[
+		{
+			code: `const mailchimp = {
     action: 'https://url/subscribe/post?parameters',
     effects: {
       mask: {
@@ -101,8 +100,9 @@ There's a pre-configured background in `Mailchimp.tsx` that you can modify in th
         height: 'var(--static-space-32)'
       }
   }
-}`, 
-    language: "tsx",
-    label: "src/app/resources/config.js"
-  }
-]} />
+}`,
+			language: 'tsx',
+			label: 'src/app/resources/config.js',
+		},
+	]}
+/>
