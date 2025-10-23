@@ -64,9 +64,6 @@ export const Header = () => {
 				position="relative"
 				height="80"
 				zIndex={1}
-				style={{
-					backdropFilter: 'blur(8px)',
-				}}
 			/>
 
 			<Fade
@@ -76,9 +73,6 @@ export const Header = () => {
 				position="relative"
 				height="80"
 				zIndex={1}
-				style={{
-					backdropFilter: 'blur(8px)',
-				}}
 			/>
 
 			<Row

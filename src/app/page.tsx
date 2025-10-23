@@ -1,11 +1,12 @@
 import { Mailchimp } from '@/components';
 import { Posts } from '@/components/blog/Posts';
+import { AnimatedGradientText } from '@/components/ui';
 import { Projects } from '@/components/work/Projects';
+import { cn } from '@/lib/utils';
 import { about, baseURL, home, person, routes } from '@/resources';
 import {
 	Avatar,
 	Badge,
-	Button,
 	Column,
 	Heading,
 	Line,
@@ -15,6 +16,8 @@ import {
 	Schema,
 	Text,
 } from '@once-ui-system/core';
+import { ChevronRight } from 'lucide-react';
+import Link from 'next/link';
 
 export async function generateMetadata() {
 	return Meta.generate({
@@ -96,27 +99,36 @@ export default function Home() {
 						horizontal="center"
 						paddingLeft="12"
 					>
-						<Button
-							id="about"
-							data-border="rounded"
-							href={about.path}
-							variant="secondary"
-							size="m"
-							weight="default"
-							arrowIcon
+						<Link
+							href="/about"
+							className="group Button_button__s9JD_ Button_secondary__9o2M1 Button_m__I_0ip rounded-[20px] text-decoration-none button cursor-interactive fit-width justify-center relative h-full w-full"
 						>
-							<Row gap="8" vertical="center" paddingRight="4">
-								{about.avatar.display && (
-									<Avatar
-										marginRight="8"
-										style={{ marginLeft: '-0.75rem' }}
-										src={person.avatar}
-										size="m"
-									/>
+							<span
+								className={cn(
+									'animate-gradient absolute inset-0 block h-full w-full rounded-[inherit] bg-gradient-to-r from-[#ffaa40]/50 via-[#9c40ff]/50 to-[#ffaa40]/50 bg-[length:300%_100%] p-[1px]'
 								)}
+								style={{
+									WebkitMask:
+										'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+									WebkitMaskComposite: 'destination-out',
+									mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+									maskComposite: 'subtract',
+									WebkitClipPath: 'padding-box',
+								}}
+							/>
+							{about.avatar.display && (
+								<Avatar
+									src={person.avatar}
+									marginRight="8"
+									style={{ marginLeft: '-0.5rem' }}
+									size="m"
+								/>
+							)}
+							<AnimatedGradientText className="text-sm font-medium">
 								{about.title}
-							</Row>
-						</Button>
+							</AnimatedGradientText>
+							<ChevronRight className="ml-1 size-4 stroke-neutral-400 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+						</Link>
 					</RevealFx>
 				</Column>
 			</Column>

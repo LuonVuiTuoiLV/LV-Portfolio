@@ -1,6 +1,8 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
+@custom-variant dark (&:is(.dark *));
+
 html {
 	overflow-x: hidden;
 	width: 100%;
@@ -10,4 +12,13 @@ html {
 ::view-transition-new(root) {
 	animation: none;
 	mix-blend-mode: normal;
+}
+
+@theme inline {
+	--animate-gradient: gradient 8s linear infinite;
+	@keyframes gradient {
+		to {
+			background-position: var(--bg-size, 300%) 0;
+		}
+	}
 }

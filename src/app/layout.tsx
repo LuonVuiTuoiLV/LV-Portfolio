@@ -6,6 +6,7 @@ import './globals.css';
 
 import { Footer, Header, Providers, RouteGuard } from '@/components';
 import { LightRays } from '@/components/ui';
+import { ScrollProgress } from '@/components/ui/scroll-progress';
 import { baseURL, fonts, home } from '@/resources';
 import { Column, Flex, Meta } from '@once-ui-system/core';
 
@@ -50,6 +51,7 @@ export default async function RootLayout({
 					padding="0"
 					horizontal="center"
 				>
+					<ScrollProgress />
 					<div className="absolute h-[100%] w-full">
 						<LightRays count={12} blur={30} speed={8} intensity={0.8} />
 					</div>
