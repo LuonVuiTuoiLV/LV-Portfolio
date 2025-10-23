@@ -1,14 +1,14 @@
-import '@/resources/custom.css';
-import '@once-ui-system/core/css/styles.css';
-import '@once-ui-system/core/css/tokens.css';
-import classNames from 'classnames';
-import './globals.css';
-
 import { Footer, Header, Providers, RouteGuard } from '@/components';
 import { LightRays } from '@/components/ui';
 import { ScrollProgress } from '@/components/ui/scroll-progress';
 import { baseURL, fonts, home } from '@/resources';
+import '@/resources/custom.css';
 import { Column, Flex, Meta } from '@once-ui-system/core';
+import '@once-ui-system/core/css/styles.css';
+import '@once-ui-system/core/css/tokens.css';
+import { Analytics } from '@vercel/analytics/next';
+import classNames from 'classnames';
+import './globals.css';
 
 export async function generateMetadata() {
 	return Meta.generate({
@@ -59,7 +59,10 @@ export default async function RootLayout({
 					<Header />
 					<Flex zIndex={0} fillWidth padding="l" horizontal="center" flex={1}>
 						<Flex horizontal="center" fillWidth minHeight="0">
-							<RouteGuard>{children}</RouteGuard>
+							<RouteGuard>
+								{children}
+								<Analytics />
+							</RouteGuard>
 						</Flex>
 					</Flex>
 					<Footer />
